@@ -2,11 +2,15 @@ package com.revisao.java.springboot.service;
 
 import com.revisao.java.springboot.model.entity.Professor;
 import com.revisao.java.springboot.repository.ProfessorRepository;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@AllArgsConstructor
+@Data
 @Service
 public class ProfessorService {
 

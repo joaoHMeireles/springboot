@@ -19,7 +19,10 @@ public class Curso {
     @Column(nullable = false)
     private String nome;
 
-    @OneToMany
-    @JoinColumn(name = "idCurso", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "idEscola")
+    private Escola escola;
+
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Disciplina> listaDeDisciplinas;
 }

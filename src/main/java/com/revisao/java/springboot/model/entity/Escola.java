@@ -22,15 +22,14 @@ public class Escola {
     @Column(nullable = false)
     private String email;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idEndereco", nullable = false)
     private Endereco endereco;
 
-    @OneToMany(mappedBy = "escola")
+    @OneToMany(mappedBy = "escola", cascade = CascadeType.ALL)
     private List<Professor> listaDeProfessores;
 
-    @OneToMany
-    @JoinColumn(name = "idEscola", nullable = false)
+    @OneToMany(mappedBy = "escola", cascade = CascadeType.ALL)
     private List<Curso> listaDeCursos;
 
 }

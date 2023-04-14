@@ -1,6 +1,7 @@
 package com.revisao.java.springboot.model.dto;
 
 import com.revisao.java.springboot.model.entity.Disciplina;
+import com.revisao.java.springboot.model.entity.Escola;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -14,4 +15,6 @@ public class CursoDTO {
 
     @NotNull
     private List<Disciplina> listaDeDisciplinas;
+
+    private Escola escola;
 }

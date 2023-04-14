@@ -19,6 +19,9 @@ public class Disciplina {
     @Column(nullable = false)
     private String nome;
 
+//    @ManyToMany(mappedBy = "listaDeDisciplinas")
+//    private List<Curso> listaDeCursos;
+
     @ManyToMany(mappedBy = "listaDeDisciplinas")
     private List<Professor> listaDeProfessores;
 }

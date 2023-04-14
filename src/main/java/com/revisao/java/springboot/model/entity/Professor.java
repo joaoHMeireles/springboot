@@ -1,5 +1,6 @@
 package com.revisao.java.springboot.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,17 +23,18 @@ public class Professor {
     @Column(nullable = false)
     private String email;
 
-    @Column(nullable = false, length = 13)
+    @Column(nullable = false)
     private String telefone;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idEndereco", nullable = false)
     private Endereco endereco;
 
+    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "idEscola", nullable = false)
+    @JoinColumn(name = "idEscola")
     private Escola escola;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Disciplina> listaDeDisciplinas;
 }

@@ -20,7 +20,7 @@ public class Aluno {
     @Column(nullable = false)
     private String email;
 
-    @Column(nullable = false, length = 13)
+    @Column(nullable = false)
     private String telefone;
 
     @OneToOne

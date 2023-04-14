@@ -24,6 +24,6 @@ public class Turma {
     private Escola escola;
 
     @OneToMany
-    @JoinColumn(name = "idTurma", nullable = false)
+    @JoinColumn(name = "idTurma")
     private List<Aluno> listaDeAlunos;
 }
