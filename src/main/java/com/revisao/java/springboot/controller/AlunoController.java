@@ -20,6 +20,12 @@ import java.util.List;
 public class AlunoController {
     private AlunoService alunoService;
 
+
+    @GetMapping("/cypress")
+    public ResponseEntity<Object> cypressTest() {
+        return ResponseEntity.ok().body(10);
+    }
+
     @GetMapping
     public ResponseEntity<List<Aluno>> findAll() {
         return ResponseEntity.status(HttpStatus.OK).body(alunoService.findAll());
